@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="description" content="UniFix - AI-powered university complaint management system">
+    <meta name="keywords" content="university, complaint, management, student, portal">
+    <meta name="author" content="UniFix Team">
+    <meta name="theme-color" content="#1E3A8A">
+    
+    <title>UniFix | University Complaint Management System</title>
+
+    <link rel="preconnect" href="http://localhost:5000">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #root {
+            min-height: 100vh;
+        }
+
+        /* Enhanced loader with brand colors */
+        .app-loader {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .loader-content {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.1);
+            border: 1px solid rgba(30, 58, 138, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .loader-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .loader-subtitle {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #e5e7eb;
+            border-top-color: #1e3a8a;
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* NoScript Styles */
+        .noscript-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            z-index: 9999;
+        }
+
+        .noscript-content {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <noscript>
+        <div class="noscript-container">
+            <div class="noscript-content">
+                <h1 style="font-size: 2rem; margin-bottom: 1rem; font-weight: 700;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>
+                    JavaScript Required
+                </h1>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem; opacity: 0.9;">
+                    UniFix requires JavaScript to provide its advanced features including real-time tracking and dashboards.
+                </p>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 0.75rem; font-weight: 600;">Please enable JavaScript to continue:</p>
+                    <ul style="text-align: left; list-style: none; padding-left: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">• Refresh after enabling JavaScript</li>
+                        <li>• Contact IT support if you need assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </noscript>
+
+    <div id="root">
+        <div class="app-loader">
+            <div class="loader-content">
+                <div class="loader-logo">UniFix</div>
+                <p class="loader-subtitle">
+                    University Complaint & Resolution System
+                </p>
+                <div class="loader-spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            if (document.querySelector('.app-loader')) {
+                const root = document.getElementById('root');
+                root.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; font-family: sans-serif;">
+                        <h2 style="margin-bottom: 1rem; color: #1e3a8a;">System Connection Issue</h2>
+                        <p style="margin-bottom: 1.5rem; color: #4b5563;">
+                            We couldn't load the dynamic dashboard. This usually happens when the connection to the backend server is interrupted.
+                        </p>
+                        <button onclick="location.reload()" style="
+                            padding: 0.75rem 2rem;
+                            background: #1e3a8a;
+                            color: white;
+                            border: none;
+                            border-radius: 8px;
+                            font-weight: 600;
+                            cursor: pointer;
+                        ">
+                            Retry Connection
+                        </button>
+                    </div>
+                `;
+            }
+        }, 10000); // 10 second timeout
+    </script>
+
+</body>
+</html>
